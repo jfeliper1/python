@@ -1,0 +1,31 @@
+"""Elabore um programa em Python que solicite que o 
+usuário informe seu nome e CEP. Por meio do CEP, acessar 
+o portal do viacep.com.br e obter a rua, bairro, 
+cidade e estado. Exibir na tela essas informações.
+
+Nome: Mickey Mouse
+Rua: Elton Silva
+Cep: 06600-025
+Bairro: Centro
+Cidade: Jandira
+UF: SP"""
+from os import system
+import requests, json 
+
+continuar = 'sim'
+
+print('***Seja bem-vindo ao cep na mão***\n')
+
+while True:
+    system('cls')
+    nome = input('Informe seu nome: ')
+    cep = (input('Informe o cep que deseja: '))
+    req = requests.get(f'https://viacep.com.br/ws/{cep}/json')
+    req = req.json()
+    print(f'Nome:{nome}\nRua:{req["logradouro"]}\nCep:{cep}\nBairro:{req["bairro"]}\nCidade:{req["localidade"]}\nUF:{req["uf"]}')
+    op = input(f'Deseja continuar [sim] ou [não]?')
+    if op != continuar:
+        break
+print(f'Programa encerrado')
+
+

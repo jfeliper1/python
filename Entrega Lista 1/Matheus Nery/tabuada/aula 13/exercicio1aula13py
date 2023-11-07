@@ -1,0 +1,9 @@
+from os import system
+system('cls')
+ 
+import sys
+print('***Sistema Financeiro Santander***')
+
+for usuario in range:
+    usuario != str(input('Informe o nome do usuário: '))
+print('Senha correta')        

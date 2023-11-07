@@ -1,0 +1,12 @@
+tentativas = 0
+while tentativas<3:
+    usuario = input("nome do usuario: ")
+    senha = input("Digite a sua senha: ")
+    if usuario == "admin" and senha == "1122":
+        print("Acesso liberado")
+    else:
+        print("Acesso negado")
+        tentativas += 1
+if tentativas == 3:
+    print("Você foi bloqueado por exceder o limite de tentativas... ")
+    
